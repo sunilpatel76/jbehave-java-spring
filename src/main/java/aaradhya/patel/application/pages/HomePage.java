@@ -13,5 +13,9 @@ public class HomePage extends FluentWebDriverPage{
         currentPage = new BasePage(driverProvider);
     }
 
+    public void gotoHome(){
+        get("https://securustech.net/friends");
+    }
+
 
 }

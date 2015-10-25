@@ -15,17 +15,8 @@ public class HomePageSteps {
     }
 
     @Given("I am on securustech.net")
-    public void givenAnnotation(){
-        System.out.println("a system state");
+    public void GoToHome(){
+        homePage.gotoHome();
     }
 
-    @When("I do something")
-    public void doSomething(){
-        System.out.println("I do something");
-    }
-
-    @Then("system is in a different state")
-    public void theTellMe(){
-        System.out.println("Hello India");
-    }
 }
