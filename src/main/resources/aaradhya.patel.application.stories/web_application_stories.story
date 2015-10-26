@@ -7,3 +7,5 @@ So that I can achieve a business goal
 
 Scenario: scenario description
 Given I am on securustech.net
+When User enter spatel@securus.com and password
+

@@ -27,15 +27,11 @@ import static org.jbehave.web.selenium.WebDriverHtmlOutput.WEB_DRIVER_HTML;
 
 public class WebApplicationStories extends JUnitStories {
 
-    /*private WebDriverProvider driverProvider = new PropertyWebDriverProvider();
-    private WebDriverSteps webDriverSteps = new PerStoryWebDriverSteps(driverProvider);*/
-
     ApplicationContext context = new SpringApplicationContextFactory("jbehave-steps.xml").createApplicationContext();
     SeleniumContext seleniumContext = new SeleniumContext();
     PendingStepStrategy pendingStepStrategy = new FailingUponPendingStep();
     ContextView contextView = new LocalFrameContextView().sized(140, 30);
-    CrossReference crossReference = new CrossReference();/*.withJsonOnly().withPendingStepStrategy(pendingStepStrategy)
-            .withOutputAfterEachStory(true).excludingStoriesWithNoExecutedScenarios(true);*/
+    CrossReference crossReference = new CrossReference();
 
     SeleniumStepMonitor stepMonitor = new SeleniumStepMonitor(contextView,seleniumContext, crossReference.getStepMonitor());
     Format[] formats = new Format[] {new SeleniumContextOutput(seleniumContext), Format.CONSOLE, WEB_DRIVER_HTML};
